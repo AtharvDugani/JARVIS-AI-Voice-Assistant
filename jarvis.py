@@ -1,6 +1,6 @@
 import os
 import google.generativeai as genai
-from source_code import takeCommand, remove_emojis, say, the_time
+from source_code import takeCommand, remove_emojis, say, the_time, greeting, hours
 from source_code import store_ai_response
 
 
@@ -92,12 +92,14 @@ def ai(prompt):
 
 # Main loop
 def main():
+
+    current_time = hours()
+    greeting(current_time)
     say("Hello Atharv! Jarvis here, how can i Assist you today? ")
 
     while True:
         print("Listening....")
-        # query = takeCommand()
-        query = input("Write your command: ")
+        query = takeCommand()
 
         if "quit" in query.lower():
             say("Okay, see you.")

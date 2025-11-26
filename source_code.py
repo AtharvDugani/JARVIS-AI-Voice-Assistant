@@ -6,7 +6,7 @@ import win32com.client
 from datetime import datetime
 from google import genai
 import speech_recognition as sr
-# import google.generativeai as genai
+
 
 
 #Todo: To convert text to speech
@@ -54,7 +54,23 @@ def the_time():
     t = time.strftime("%I:%M %p")
     return t      
 
+# Todo: Following two function are to greet user as per the time 
+def hours():
+    now = datetime.now()
+    current_time = int(now.strftime("%H"))
+    return current_time
+def greeting(t):
+    if t < 12 :
+        say("Good morning sir")
+    elif 12 <= t <= 17:
+        say("Good Afternoon sir")
+    elif 17 < t <= 19:
+        say("Good evening sir")
+    else :
+        say("Good night sir")
 
+
+# Todo: To be able to write the content using goggle's gemini
 def store_ai_response(query):
 
     say("Your query is in the process")
