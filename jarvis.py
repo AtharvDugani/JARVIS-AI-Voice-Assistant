@@ -10,7 +10,7 @@ conversations = []
 
 # Get API key from environment
 def get_api_key():
-    return os.getenv("AIzaSyBd5jdZqL7-oQLVwhdu6W1OR7AhZXp7VQE")
+    return os.getenv("API_KEY")
 
 
 # Save conversation to file
